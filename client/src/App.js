@@ -6,9 +6,6 @@ function App() {
   const [movieName, setMovieName] = useState("");
   const [review, setReview] = useState("");
 
-  useState(() => {
-    // 여기에서 axios로 백엔드에 보냄
-  }, []);
   const submitReview = () => {
     axios
       .post("http://localhost:3001/api/insert", {
@@ -16,9 +13,15 @@ function App() {
         movieReview: review,
       })
       .then(() => {
+        console.log("성공");
         alert("성공~!");
       });
   };
+
+  useEffect(() => {
+    // 여기에서 axios로 백엔드에 보냄
+    submitReview();
+  }, []);
 
   return (
     <div className="App">

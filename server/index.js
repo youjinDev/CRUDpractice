@@ -24,7 +24,8 @@ const db = mysql.createConnection({
 
 app.use(express.json());
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/api/insert", (req, res) => {
   const movieName = req.body.movieName;
@@ -35,6 +36,15 @@ app.post("/api/insert", (req, res) => {
     console.log(result);
   });
 });
+
+app.get("/api/data", (req, res) => {
+  const sqlSelect = "SELECT * FROM movie_reviews";
+  db.query(sqlSelect, (err, result, field) =>
+    err ? console.log("데이터 가져오기 실패") : res.send(result)
+  );
+});
+
+app.get("/", (req, res) => res.send("잘 돌아가는 중..."));
 
 app.listen(3001, () => {
   console.log("3001 running...");
