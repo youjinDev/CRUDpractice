@@ -19,6 +19,16 @@
 .form button {
   padding: 8px;
   border: 1px solid black;
-  background-color: gold;
+  background-color: blueviolet;
+  color: white;
   cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.form button:hover {
+  transform: scale(1.1);
+}
+
+.title {
+  color: blueviolet;
 }
