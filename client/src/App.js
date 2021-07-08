@@ -15,6 +15,8 @@ function App() {
       movieName: movieName,
       movieReview: review,
     });
+
+    setMovieData([...movieData, { movieName, movieReview: review }]);
   };
 
   useEffect(() => {
@@ -23,6 +25,7 @@ function App() {
       setMovieData(res.data);
     });
   }, []);
+
   return (
     <div className="App">
       <h1>CRUD APPLICATION</h1>
@@ -61,11 +64,20 @@ function App() {
       <h1>Reviews</h1>
       <hr />
       <div>
-        <ul>
+        <ul className="cards_container">
           {movieData.map((review) => (
-            <li key={review.id}>
+            <li className="card" key={review.id}>
               <h1 className="title">{review.movieName}</h1>
               <h3>{review.movieReview}</h3>
+              <button className="delete_btn">delete</button>
+              <div>
+                <input
+                  type="text"
+                  placeholder="update..."
+                  className="update_input"
+                />
+                <button>update</button>
+              </div>
             </li>
           ))}
         </ul>

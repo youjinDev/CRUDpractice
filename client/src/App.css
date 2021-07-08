@@ -16,7 +16,7 @@
   font-size: 25px;
 }
 
-.form button {
+button {
   padding: 8px;
   border: 1px solid black;
   background-color: blueviolet;
@@ -25,10 +25,31 @@
   margin-bottom: 50px;
 }
 
-.form button:hover {
+button:hover {
   transform: scale(1.1);
+}
+
+.cards_container {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 50vw;
+}
+
+.card {
+  width: 500px;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  margin: 18px auto;
+  padding: 10px;
 }
 
 .title {
   color: blueviolet;
+}
+
+.update_input {
+  width: 200px;
+  font-size: 22px;
+  border: 1px solid blueviolet;
 }
