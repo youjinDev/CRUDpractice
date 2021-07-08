@@ -69,14 +69,14 @@ function App() {
             <li className="card" key={review.id}>
               <h1 className="title">{review.movieName}</h1>
               <h3>{review.movieReview}</h3>
-              <button className="delete_btn">delete</button>
-              <div>
+              <button className="delete_btn">X</button>
+              <div className="input_container">
                 <input
                   type="text"
                   placeholder="update..."
                   className="update_input"
                 />
-                <button>update</button>
+                <button>➕</button>
               </div>
             </li>
           ))}
